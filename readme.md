@@ -1,6 +1,5 @@
 # autovenv
-
-- Managing multiple different environments on multiple servers can be alot of pain, especially in older firms where everything is done manually. Just add this before your regular virtualenv activate and the env will be automatically updated just by pointing to repository requirements file.
+Managing multiple different environments on multiple servers can be alot of pain, especially in older firms where everything is done manually. Just add this before your regular virtualenv activate and the env will be automatically updated just by pointing to repository requirements file.
 
 ## It does the following
 - **Environment Setup**: Creates a Python virtual environment using venv if it does not exist yet.
