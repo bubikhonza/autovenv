@@ -1,9 +1,8 @@
 # autovenv
 
-## Overview
 This simple tool uses `virtualenv` in background and manages the dependencies from requirements file located at a given URL. It ensures that the latest dependencies are fetched and installed only if there are changes detected between the local and remote requirements.
 
-## Features
+## 
 - **Environment Setup**: Creates a Python virtual environment using venv.
 - **Dependency Management**: Checks for updates of requirements from a specified URL (tested on github) and updates if necessary.
 
