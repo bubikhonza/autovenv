@@ -1,13 +1,12 @@
 # autovenv
 
-This simple tool uses `virtualenv` in background and manages the dependencies from requirements file located at a given URL. It ensures that the latest dependencies are fetched and installed only if there are changes detected between the local and remote requirements.
+- Managing multiple different environments on multiple servers can be alot of pain, especially in older firms where everything is done manually. Just add this before your regular virtualenv activate and the env will be automatically updated just by pointing to repository requirements file.
 
-## What it does
-- **Environment Setup**: Creates a Python virtual environment using venv.
+## It does the following
+- **Environment Setup**: Creates a Python virtual environment using venv if it does not exist yet.
 - **Dependency Management**: Checks for updates of requirements from a specified URL (tested on github) and updates if necessary.
 
 ## Prerequisites
-
 - Python with venv library (https://docs.python.org/3/library/venv.html)
 
 ## How to Use
