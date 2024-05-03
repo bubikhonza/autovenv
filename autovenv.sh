@@ -15,28 +15,28 @@ else
     echo "Virtual environment already exists at $venvpath"
 fi
 
-if [ ! -f "$venvpath/requirements.txt" ]; then
-    echo "Creating empty requirements.txt"
-    touch "$venvpath/requirements.txt"
+if [ ! -f "$venvpath/requirements.snapshot.txt" ]; then
+    echo "Creating empty requirements.snapshot.txt"
+    touch "$venvpath/requirements.snapshot.txt"
 fi
 
 echo "Fetching requirements from specified URL..."
-curl -s "$requirements_url" > "$venvpath/new_requirements.txt"
+curl -s "$requirements_url" > "$venvpath/new_requirements.snapshot.txt"
 
 echo "Checking for updates in requirements..."
-if ! cmp -s "$venvpath/requirements.txt" "$venvpath/new_requirements.txt"; then
-    echo "Differences found, updating requirements.txt..."
-    mv "$venvpath/new_requirements.txt" "$venvpath/requirements.txt"
+if ! cmp -s "$venvpath/requirements.snapshot.txt" "$venvpath/new_requirements.snapshot.txt"; then
+    echo "Differences found, updating requirements.snapshot.txt..."
+    mv "$venvpath/new_requirements.snapshot.txt" "$venvpath/requirements.snapshot.txt"
     updated=true
 else
     echo "No update needed."
     updated=false
-    rm "$venvpath/new_requirements.txt"
+    rm "$venvpath/new_requirements.snapshot.txt"
 fi
 
 if [ "$updated" = true ]; then
     echo "Installing updated requirements..."
-    "$venvpath/bin/pip" install -r "$venvpath/requirements.txt"
+    "$venvpath/bin/pip" install -r "$venvpath/requirements.snapshot.txt"
 fi
 
 echo "Script completed successfully. Please activate your virtual environment manually to use it."
